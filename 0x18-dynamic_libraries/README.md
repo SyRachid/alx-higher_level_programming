@@ -1,1 +1,1 @@
-create my static mibrairy
+create my dynamic  library
