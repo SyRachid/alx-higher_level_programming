@@ -11,12 +11,12 @@ class Square:
     def area(self):
         """Method that return the area of the square"""
         return self.__size**2
-    
+
     @property
     def size(self):
         """Method that retrive the attribute size of class."""
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """Setter method"""
