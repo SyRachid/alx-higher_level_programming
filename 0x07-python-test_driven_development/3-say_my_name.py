@@ -5,7 +5,7 @@ this module is to print a fist name follow to last name
 """
 
 
-def say_my_name(first_name, last_name =""):
+def say_my_name(first_name, last_name=""):
     """
     print first name and last name
 
