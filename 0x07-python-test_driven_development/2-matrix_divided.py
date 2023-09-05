@@ -1,3 +1,4 @@
+#!/bin/usr/python3
 """
 this module is to divide each element of matrix by a number of int/float
 """

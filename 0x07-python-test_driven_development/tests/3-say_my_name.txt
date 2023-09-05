@@ -1,0 +1,37 @@
+"""import a module""""
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+"""testing docstring in module"""
+>>> m = __import__('say_my_name').__doc__
+>>> len(m) > 1
+True 
+
+"""testing docstring in function"""
+>>> f = __import__('say_my_name').say_my_name.__doc__
+>>> len(f) > 1
+True
+
+"""test for string input"""
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+"""testing for simple on input firstname"""
+>>> say_my_name("Walter")
+My name is Walter
+
+"""testing for other type of first name"
+>>> say_my_name(2,"White")
+Traceback (most recent call last):
+...
+TypeError: first name must be a string
+
+>>>say_my_name("Bob", None):
+Traceback (most recent call last):
+...
+TypeError: last name must be a string
+
+>>>say_my_name():
+Traceback (most recent call last):
+...
+TypeError: first name must be a string
+
