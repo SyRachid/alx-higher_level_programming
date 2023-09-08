@@ -1,58 +1,53 @@
-The ``3-say_my_name`` module
-======================
+# The ``3-say_my_name`` module
+============================================
+How to use 3-say_my_name.py
+============================================
 
-Using ``say_my_name``
--------------------
+This library has one function called ``say_my_name()``
 
-Importing the function from the module:
-	>>> say_my_name = __import__("3-say_my_name").say_my_name
+``say_my_name()`` prints a person's first name and last name.
 
-Checking for module docstring:
-	 >>> m = __import__("3-say_my_name").__doc__
-	 >>> len(m) > 1
-	 True
+Importing the function say_my_name.
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-Checking for function docstring:
-	 >>> f = __import__("3-say_my_name").say_my_name.__doc__
-         >>> len(f) > 1
-         True
+Passing first_name and last_name correctly.
+    >>> say_my_name("Wendy", "Munyasi")
+    My name is Wendy Munyasi
 
-Checking for passing None as first name:
-	 >>> say_my_name(None, "Hello")
-	 Traceback (most recent call last):
-         ...
-         TypeError: first_name must be a string
+    >> say_my_name("Breezy")
+    My name is Breezy
 
-Checking for passing None as last name:
-	 >>> say_my_name("Hello", None)
-	 Traceback (most recent call last):
-         ...
-         TypeError: last_name must be a string
+Passing last_name as None.
+    >>> say_my_name("Wendy", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
 
-Checking for wrong type as first name:
-         >>> say_my_name(1, "Hello")
-         Traceback (most recent call last):
-         ...
-         TypeError: first_name must be a string
+Passing first_name and last_name as None.
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
 
-Checking for wrong type as last name:
-         >>> say_my_name("Hello", [4])
-         Traceback (most recent call last):
-         ...
-         TypeError: last_name must be a string
+Passing first name as None.
+    >>> say_my_name(None, "Breezy")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
 
-Checking for normal use:
-	 >>> say_my_name("Hello", "World")
-	 My name is Hello World
-	 >>> say_my_name("You know nothing", "John Snow")
-	 My name is You know nothing John Snow
+Passing wrong types as first_name and last_name
+    >>> say_my_name(1, "Breezy")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
 
-Checking for 1 arg:
-	 >>> say_my_name("Hello")
-	 My name is Hello 
+    >>> say_my_name("Chris", [4])
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
 
-Checking for more than 2 args:
-	 >>> say_my_name("Hello", "World", "hi")
-	 Traceback (most recent call last):
-	 ...
-	 TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+Passing more than two arguments to say_my_name().
+    >>> say_my_name("Chris", "Breezy", "Brown") #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but ...
